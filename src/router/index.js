@@ -5,6 +5,7 @@ import Welcome from '../components/welcome.vue'
 import Home from '../components/home.vue'
 import Users from '../components/users.vue'
 import Maps from '../components/maps.vue'
+import NotFound from '../components/Notfound.vue'
 
 Vue.use(VueRouter)
 /* eslint-disable */
@@ -31,6 +32,10 @@ const routes = [{
       {
         path: '/maps',
         component: Maps,
+      },
+      {
+        path: '/notfound',
+        component: NotFound
       }
     ]
   }
@@ -50,6 +55,9 @@ router.beforeEach((to, from, next) => {
   const tokenStr = window.sessionStorage.getItem('token')
   if (!tokenStr) {
     return next('/login')
+  }
+  if (to.matched.length === 0) {
+    return next('/notfound')
   }
   next()
 })

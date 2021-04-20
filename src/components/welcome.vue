@@ -9,7 +9,7 @@
       <el-row>
         <img src="../assets/logo.jpeg" alt />
         <span class="desc">欢迎来到我的主页，这些都是个人随笔，希望你也喜欢</span>
-        <span class="time">12:00:00</span>
+        <span class="time">{{time}}</span>
       </el-row>
     </el-card>
     <div id="main"></div>
@@ -22,6 +22,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
+      time: '12:00:00'
     }
   },
   mounted () {

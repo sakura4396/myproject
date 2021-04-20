@@ -83,6 +83,17 @@ export default {
           path: 'maps'
         }
         ]
+      },
+      {
+        id: 3,
+        cateName: '部分页面',
+        path: 'pages',
+        icon: 'iconfont el-icon-info',
+        children: [{
+          id: 21,
+          cateName: '404',
+          path: 'notfound'
+        }]
       }]
     }
   },
